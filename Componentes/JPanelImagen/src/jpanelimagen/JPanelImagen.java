@@ -1,7 +1,6 @@
 package jpanelimagen;
 
 import java.awt.Graphics;
-import java.io.File;
 import java.io.Serializable;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -12,25 +11,25 @@ import javax.swing.JPanel;
  */
 public class JPanelImagen extends JPanel implements Serializable {
 
-    private File rutaImagen;
+    private imagenFondo imagenFondo;
 
     public JPanelImagen() {
 
     }
 
-    public File getRutaImagen() {
-        return rutaImagen;
+    public imagenFondo getImagenFondo() {
+        return imagenFondo;
     }
 
-    public void setRutaImagen(File rutaImagen) {
-        this.rutaImagen = rutaImagen;
+    public void setImagenFondo(imagenFondo imagenFondo) {
+        this.imagenFondo = imagenFondo;
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (rutaImagen != null && rutaImagen.exists()) {
-            ImageIcon imageIcon = new ImageIcon(rutaImagen.getAbsolutePath());
+        if (imagenFondo.getRutaImagen() != null && imagenFondo.getRutaImagen().exists()) {
+            ImageIcon imageIcon = new ImageIcon(imagenFondo.getRutaImagen().getAbsolutePath());
             g.drawImage(imageIcon.getImage(), 0, 0, null);
         }
     }
