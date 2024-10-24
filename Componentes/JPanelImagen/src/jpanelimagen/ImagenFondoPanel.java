@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package jpanelimagen;
 
 import java.io.File;
@@ -9,7 +5,7 @@ import javax.swing.JFileChooser;
 
 /**
  *
- * @author dmargarb
+ * @author David
  */
 public class ImagenFondoPanel extends javax.swing.JPanel {
 
@@ -36,6 +32,8 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
         jSliderOpcacidad = new javax.swing.JSlider();
 
         jLabel1.setText("Imagen");
+
+        jTextFieldRuta.setEditable(false);
 
         jButtonAbrirRuta.setText("...");
         jButtonAbrirRuta.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +88,12 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonAbrirRutaActionPerformed
 
-
+    ImagenFondo getSelectedValue() {
+        File f = new File(jTextFieldRuta.getText());
+        Float opacidad = jSliderOpcacidad.getValue()/100f;
+        return new ImagenFondo(f, opacidad);
+    }
+                         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAbrirRuta;
     private javax.swing.JLabel jLabel1;

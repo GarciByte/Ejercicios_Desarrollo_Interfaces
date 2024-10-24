@@ -7,12 +7,12 @@ import java.io.Serializable;
  *
  * @author David
  */
-public class imagenFondo implements Serializable {
+public class ImagenFondo implements Serializable {
 
     private File rutaImagen;
     private Float opacidad;
 
-    public imagenFondo(File rutaImagen, Float opacidad) {
+    public ImagenFondo(File rutaImagen, Float opacidad) {
         this.rutaImagen = rutaImagen;
         this.opacidad = opacidad;
     }
