@@ -8,7 +8,7 @@ import java.beans.PropertyEditorSupport;
  * @author David
  */
 public class ImagenFondoPropertyEditorSupport extends PropertyEditorSupport {
-    
+
     private ImagenFondoPanel imagenFondoPanel = new ImagenFondoPanel();
 
     @Override
@@ -23,14 +23,15 @@ public class ImagenFondoPropertyEditorSupport extends PropertyEditorSupport {
 
     @Override
     public String getJavaInitializationString() {
-        return super.getJavaInitializationString();
+        ImagenFondo imagenFondo = imagenFondoPanel.getSelectedValue();
+        String ruta = imagenFondo.getRutaImagen().getAbsolutePath();
+        ruta = ruta.replace('\\', '/');
+        return "new jpanelimagen.ImagenFondo(" + "new java.io.File(\"" + ruta + "\")," + imagenFondo.getOpacidad() + "f)";
     }
 
     @Override
     public Object getValue() {
         return imagenFondoPanel.getSelectedValue();
     }
-
-    
 
 }

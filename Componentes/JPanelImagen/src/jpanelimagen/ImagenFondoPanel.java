@@ -29,7 +29,7 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
         jTextFieldRuta = new javax.swing.JTextField();
         jButtonAbrirRuta = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jSliderOpcacidad = new javax.swing.JSlider();
+        jSliderOpacidad = new javax.swing.JSlider();
 
         jLabel1.setText("Imagen");
 
@@ -54,7 +54,7 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSliderOpcacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSliderOpacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -74,7 +74,7 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jSliderOpcacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSliderOpacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(213, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -90,7 +90,7 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
 
     ImagenFondo getSelectedValue() {
         File f = new File(jTextFieldRuta.getText());
-        Float opacidad = jSliderOpcacidad.getValue()/100f;
+        Float opacidad = jSliderOpacidad.getValue()/100f;
         return new ImagenFondo(f, opacidad);
     }
                          
@@ -98,7 +98,7 @@ public class ImagenFondoPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButtonAbrirRuta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JSlider jSliderOpcacidad;
+    private javax.swing.JSlider jSliderOpacidad;
     private javax.swing.JTextField jTextFieldRuta;
     // End of variables declaration//GEN-END:variables
 }

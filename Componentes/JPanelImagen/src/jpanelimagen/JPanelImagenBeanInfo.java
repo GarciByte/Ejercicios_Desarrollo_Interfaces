@@ -1,14 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Beans/BeanInfo.java to edit this template
- */
 package jpanelimagen;
 
 import java.beans.*;
 
 /**
  *
- * @author Luma
+ * @author David
  */
 public class JPanelImagenBeanInfo extends SimpleBeanInfo {
 
