@@ -1,0 +1,33 @@
+<project name="JPanelEmail" default="dist" basedir=".">
+    <description>Builds, tests, and runs the project JPanelEmail with dependencies included.</description>
+
+    <!-- Import existing build configuration -->
+    <import file="nbproject/build-impl.xml"/>
+    
+    <!-- Target para extraer las clases de las dependencias a una carpeta temporal -->
+    <target name="unjar-deps" description="Extracts dependencies to temp directory">
+        <!-- Crear una carpeta temporal para las clases de la librería -->
+        <mkdir dir="build/dependencies"/>
+        
+        <!-- Extraer las clases de commons-validator-1.7.jar a la carpeta temporal -->
+        <unzip src="lib/commons-validator-1.7.jar" dest="build/dependencies"/>
+    </target>
+    
+    <!-- Target para crear el fat jar con las clases del proyecto y las dependencias -->
+    <target name="dist" depends="compile,unjar-deps" description="Create a single JAR with all dependencies">
+        <!-- Crear la carpeta de distribución si no existe -->
+        <mkdir dir="dist"/>
+
+        <!-- Empaquetar las clases del proyecto y las dependencias en un solo JAR -->
+        <jar destfile="dist/JPanelEmail-fat.jar">
+            <!-- Incluir las clases compiladas del proyecto -->
+            <fileset dir="${build.classes.dir}"/>
+            
+            <!-- Incluir las clases extraídas de las dependencias -->
+            <fileset dir="build/dependencies"/>
+        </jar>
+        
+        <!-- Limpiar la carpeta temporal después de empaquetar -->
+        <delete dir="build/dependencies"/>
+    </target>
+</project>
