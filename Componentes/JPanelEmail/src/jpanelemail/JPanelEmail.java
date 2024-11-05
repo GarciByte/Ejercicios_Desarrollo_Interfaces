@@ -3,6 +3,7 @@ package jpanelemail;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.Serializable;
+import javax.swing.border.Border;
 import org.apache.commons.validator.routines.EmailValidator;
 
 /**
@@ -23,6 +24,9 @@ public class JPanelEmail extends javax.swing.JPanel implements Serializable {
     private Font hintFont;
     private Font emailNoValidoFont;
 
+    private Border borderColorEmailValido;
+    private Border borderColorEmailNoValido;
+
     public JPanelEmail() {
         initComponents();
         this.jLabelValidate.setVisible(false);
@@ -38,6 +42,9 @@ public class JPanelEmail extends javax.swing.JPanel implements Serializable {
         this.nombreJlabelEmailFont = this.jLabelNombre.getFont();
         this.hintFont = this.jLabelHint.getFont();
         this.emailNoValidoFont = this.jLabelValidate.getFont();
+
+        this.borderColorEmailValido = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 0));
+        this.borderColorEmailNoValido = javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0));
     }
 
     public String getNombreJlabelEmail() {
@@ -126,6 +133,22 @@ public class JPanelEmail extends javax.swing.JPanel implements Serializable {
         return validator.isValid(email);
     }
 
+    public Border getBorderColorEmailValido() {
+        return borderColorEmailValido;
+    }
+
+    public Border getBorderColorEmailNoValido() {
+        return borderColorEmailNoValido;
+    }
+
+    public void setBorderColorEmailValido(Border borderColorEmailValido) {
+        this.borderColorEmailValido = borderColorEmailValido;
+    }
+
+    public void setBorderColorEmailNoValido(Border borderColorEmailNoValido) {
+        this.borderColorEmailNoValido = borderColorEmailNoValido;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,36 +158,29 @@ public class JPanelEmail extends javax.swing.JPanel implements Serializable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelHint = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabelValidate = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelHint = new javax.swing.JLabel();
         jTextFieldEmail = new javax.swing.JTextField();
 
-        setLayout(null);
-
-        jLabelHint.setForeground(new java.awt.Color(204, 204, 204));
-        jLabelHint.setText("usuario@dominio.com");
-        add(jLabelHint);
-        jLabelHint.setBounds(30, 110, 120, 20);
-
         jLabel1.setText("Nombre:");
-        add(jLabel1);
-        jLabel1.setBounds(21, 6, 60, 16);
 
         jLabelNombre.setText("Correo electrónico:");
-        add(jLabelNombre);
-        jLabelNombre.setBounds(20, 76, 240, 30);
 
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(187, 187, 187)));
-        add(jTextField1);
-        jTextField1.setBounds(21, 28, 240, 29);
 
         jLabelValidate.setForeground(new java.awt.Color(255, 51, 51));
         jLabelValidate.setText("El email no es válido");
-        add(jLabelValidate);
-        jLabelValidate.setBounds(20, 160, 240, 26);
+
+        jPanel1.setLayout(null);
+
+        jLabelHint.setForeground(new java.awt.Color(204, 204, 204));
+        jLabelHint.setText("usuario@dominio.com");
+        jPanel1.add(jLabelHint);
+        jLabelHint.setBounds(0, 0, 240, 30);
 
         jTextFieldEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(187, 187, 187)));
         jTextFieldEmail.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -180,17 +196,53 @@ public class JPanelEmail extends javax.swing.JPanel implements Serializable {
                 jTextFieldEmailKeyReleased(evt);
             }
         });
-        add(jTextFieldEmail);
-        jTextFieldEmail.setBounds(20, 110, 240, 29);
+        jPanel1.add(jTextFieldEmail);
+        jTextFieldEmail.setBounds(0, 0, 240, 29);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelValidate, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel1)
+                .addGap(6, 6, 6)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelValidate, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEmailKeyReleased
         if (validateEmail(this.jTextFieldEmail.getText())) {
             this.jLabelValidate.setVisible(false);
-            this.jTextFieldEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 0)));
+            this.jTextFieldEmail.setBorder(this.borderColorEmailValido);
         } else {
             this.jLabelValidate.setVisible(true);
-            this.jTextFieldEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+            this.jTextFieldEmail.setBorder(this.borderColorEmailNoValido);
         }
     }//GEN-LAST:event_jTextFieldEmailKeyReleased
 
@@ -209,6 +261,7 @@ public class JPanelEmail extends javax.swing.JPanel implements Serializable {
     private javax.swing.JLabel jLabelHint;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelValidate;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldEmail;
     // End of variables declaration//GEN-END:variables
