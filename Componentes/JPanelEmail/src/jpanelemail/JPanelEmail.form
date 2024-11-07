@@ -31,7 +31,7 @@
                           <Component id="jLabelValidate" min="-2" pref="240" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jPanel1" max="32767" attributes="0"/>
-                              <Component id="jLabelNombre" pref="240" max="32767" attributes="0"/>
+                              <Component id="jLabelNombre" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -91,19 +91,19 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
+        <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabelHint">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+              <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="usuario@dominio.com"/>
+            <Property name="text" type="java.lang.String" value="  usuario@dominio.com"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="240" height="30"/>
+              <AbsoluteConstraints x="0" y="0" width="230" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
