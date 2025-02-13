@@ -1,45 +1,61 @@
-# Archivos compilados de Java
+# ================ #
+# Entornos de Java #
+# ================ #
 *.class
 *.jar
 *.war
 *.ear
 *.log
-
-# Directorios de construcción y dependencias
 bin/
 build/
 out/
 target/
-dist/
-lib/
-*.dll
-*.so
-*.ipa
-*.apk
-
-# Archivos temporales y logs
-*.log
-*.tmp
-*.orig
-*.rej
-*.swp
-*.swo
-*.bak
-.DS_Store
-*.cache
-
-# Maven
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-
-# Gradle
 .gradle/
 !gradle-wrapper.jar
-gradle-app.setting
+gradle.properties
+.metadata/
 
+# ============== #
+# Entornos .NET  #
+# ============== #
+*.dll
+*.exe
+*.pdb
+*.cache
+*.ilk
+*.nupkg
+*.suo
+*.user
+*.userprefs
+.vs/
+bin/
+obj/
+TestResults/
+App_Data/
+packages/
+.nuget/
+NuGet.Config
+*.pubxml
+*.DotSettings
+*.jfm
+BundleArtifacts/
+
+# ============== #
+# .NET MAUI      #
+# ============== #
+android/bin/
+android/obj/
+ios/bin/
+ios/obj/
+maccatalyst/bin/
+maccatalyst/obj/
+win/bin/
+win/obj/
+MauiArtifacts/
+
+# ================ #
+# IDEs y Editores  #
+# ================ #
 # IntelliJ IDEA
 .idea/
 *.iml
@@ -47,36 +63,59 @@ gradle-app.setting
 *.iws
 out/
 .idea_modules/
-*.eml
-*.dump
 
 # NetBeans
 nbproject/
 nbproject/private/
-build/
 nbbuild/
-dist/
 nbdist/
-nbprivate/
+nb-private/
 *.properties
 *.prefs
 nbactions.xml
-nb-configuration.xml
 
 # Visual Studio Code
 .vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
-!.vscode/extensions.json
 *.code-workspace
 
-# Archivos de sistema y entorno
-*.env
-*.env.local
-*.suo
-*.user
-*.nib
-*.launch
-.settings/
-.metadata/
+# Visual Studio 2022
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.sln.docstates
+*.VC.db
+*.sqlite
+ipch/
+*.aps
+*.opendb
+
+# ================ #
+# Testing          #
+# ================ #
+# JUnit/Mockito
+test-results/
+reports/
+*.jfr
+*.hprof
+
+# ================ #
+# Sistema/General  #
+# ================ #
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*.swo
+*.bak
+*.log
+*.cache
+.env
+node_modules/
+wwwroot/lib/
+dist/
+.cache/
+dump.rdb
+*.orig
